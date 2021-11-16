@@ -13,6 +13,7 @@ function showCountry(listCountries) {
     let template = ""
     if (listCountries.length > 10) {
     template = "Too many matches found. Please enter a more specific name.";
+    countryList.innerHTML = template;
     } else if (listCountries.length < 10 && listCountries.length > 1) {
         listCountries.forEach((e) => {
             template = template + listEveryCountries(e)
@@ -23,8 +24,10 @@ function showCountry(listCountries) {
        
     } else if (listCountries.length === 1) {
        listCountries.forEach((e) => {
-            template = template + listOneCountries(e)
+         template = template + listOneCountries(e);
+     
        })
+     
       countryList.innerHTML = template;
     }
 }
@@ -40,7 +43,7 @@ function listEveryCountries(country) {
     
 }
    function listOneCountries(country) {
-  
+ 
    return `<div>
   <ul>
     <li><img src="${country.flags.svg}" width="20" height="18">  <span> ${country.name.official}</span></li>
@@ -52,5 +55,10 @@ function listEveryCountries(country) {
     
 } 
 
+function lang(country) {
+  let language = "";
+    country.languages.forEach((el) => { "lang:", el })
+  language = language + el
+}
 
 
