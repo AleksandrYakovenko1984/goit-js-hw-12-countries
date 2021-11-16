@@ -1,5 +1,6 @@
 import debounce from "lodash.debounce";
 import fetchCountry from "./fetchCountries.js"
+import langList from "./templates/languages.hbs"
 const searchBox = document.querySelector('#search-box')
 const countryList = document.querySelector('.country-list')
 
