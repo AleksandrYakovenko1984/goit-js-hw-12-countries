@@ -26,6 +26,7 @@ function showCountry(listCountries) {
     } else if (listCountries.length === 1) {
        listCountries.forEach((e) => {
          template = template + listOneCountries(e);
+    
      
        })
      
@@ -43,23 +44,23 @@ function listEveryCountries(country) {
 </div>`
     
 }
-   function listOneCountries(country) {
+function listOneCountries(country) {
+  
  
    return `<div>
   <ul>
     <li><img src="${country.flags.svg}" width="20" height="18">  <span> ${country.name.official}</span></li>
     <li> capital:    ${country.capital}</li>
     <li> population: ${country.population}</li>
-    <li> languages:  ${country.languages}</li>
+    <li> languages:  ${langList}</li>
   </ul>
 </div>`
     
 } 
 
-function lang(country) {
-  let language = "";
-    country.languages.forEach((el) => { "lang:", el })
-  language = language + el
-}
+
+
+
+
 
 
