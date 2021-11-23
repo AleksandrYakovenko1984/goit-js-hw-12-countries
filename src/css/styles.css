@@ -31,4 +31,6 @@ body {
 .oneCountry {
   background-color: paleturquoise;
   font-size: 30px;
+
+  padding: 10px 12px;
 }
