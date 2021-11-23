@@ -1,6 +1,7 @@
 import debounce from "lodash.debounce";
+
 import fetchCountry from "./fetchCountries.js"
-import langList from "./templates/languages.hbs"
+
 const searchBox = document.querySelector('#search-box')
 const countryList = document.querySelector('.country-list')
 
@@ -13,7 +14,7 @@ searchBox.addEventListener('input', debounce(() => {
 function showCountry(listCountries) {
     let template = ""
     if (listCountries.length > 10) {
-    template = "Too many matches found. Please enter a more specific name.";
+    template = "Too many matches found. Please enter a more specific name."
     countryList.innerHTML = template;
     } else if (listCountries.length < 10 && listCountries.length > 1) {
         listCountries.forEach((e) => {
@@ -52,12 +53,18 @@ function listOneCountries(country) {
     <li><img src="${country.flags.svg}" width="20" height="18">  <span> ${country.name.official}</span></li>
     <li> capital:    ${country.capital}</li>
     <li> population: ${country.population}</li>
-    <li> languages:  ${langList}</li>
+    <li> languages:  ${lang(country)}</li>
   </ul>
 </div>`
     
 } 
 
+function lang(country) {
+  console.log(country.languages);
+  const keys = Object.values(country.languages);
+  console.log(keys);
+ return keys
+}
 
 
 
