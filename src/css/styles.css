@@ -28,3 +28,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.oneCountry {
+  background-color: paleturquoise;
+  font-size: 30px;
+}

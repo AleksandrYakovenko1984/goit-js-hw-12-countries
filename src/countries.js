@@ -30,6 +30,7 @@ function showCountry(listCountries) {
     
      
        })
+      
      
       countryList.innerHTML = template;
     }
@@ -49,8 +50,8 @@ function listOneCountries(country) {
   
  
    return `<div>
-  <ul>
-    <li><img src="${country.flags.svg}" width="20" height="18">  <span> ${country.name.official}</span></li>
+  <ul class = "animate__animated animate__pulse oneCountry">
+    <li><img src="${country.flags.svg}" width="28" height="25">  <span> ${country.name.official}</span></li>
     <li> capital:    ${country.capital}</li>
     <li> population: ${country.population}</li>
     <li> languages:  ${lang(country)}</li>
