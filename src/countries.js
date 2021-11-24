@@ -9,8 +9,8 @@ const countryList = document.querySelector('.country-list')
 searchBox.addEventListener('input', debounce(() => {
     const name = searchBox.value.trim()
     fetchCountry(name).then(res=>showCountry(res)).catch( (error) => {
-  console.error(error);
-  showError()
+    console.error(error);
+    showError()
 })
 }, 300))
 
