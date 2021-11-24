@@ -8,7 +8,10 @@ const countryList = document.querySelector('.country-list')
 
 searchBox.addEventListener('input', debounce(() => {
     const name = searchBox.value.trim()
-    fetchCountry(name).then(res=>showCountry(res)).catch(showError())
+    fetchCountry(name).then(res=>showCountry(res)).catch( (error) => {
+  console.error(error);
+  showError()
+})
 }, 300))
 
 function showCountry(listCountries) {
@@ -34,6 +37,7 @@ function showCountry(listCountries) {
 }
 function showError() {
  
+
      return Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
