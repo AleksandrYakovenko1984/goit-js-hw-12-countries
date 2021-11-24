@@ -8,13 +8,13 @@ const countryList = document.querySelector('.country-list')
 
 searchBox.addEventListener('input', debounce(() => {
     const name = searchBox.value.trim()
-    fetchCountry(name).then(res=>showCountry(res)).catch(showError(404))
+    fetchCountry(name).then(res=>showCountry(res)).catch(showError())
 }, 300))
 
 function showCountry(listCountries) {
     let template = ""
     if (listCountries.length > 10) {
-       Notiflix.Notify.failure('Too many matches found. Please enter a more specific name.');
+       Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
     // countryList.innerHTML = template;
     } else if (listCountries.length < 10 && listCountries.length > 1) {
          listCountries.forEach((e) => {
@@ -33,7 +33,8 @@ function showCountry(listCountries) {
     } 
 }
 function showError() {
- return Notiflix.Notify.failure('Oops, there is no country with that name');
+ 
+     return Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
 function listEveryCountries(country) {
